@@ -35,9 +35,9 @@ async def answer(bot, query):
     invite_links = await is_subscribed(bot, query=query)
     if AUTH_CHANNEL and len(invite_links) >= 1:
         await query.answer(results=[],
-                           cache_time=0,
-                           switch_pm_text='You have to subscribe my channel to use the bot',
-                           switch_pm_parameter="subscribe")
+            cache_time=0,
+            switch_pm_text='You have to subscribe my channel to use the bot',
+            switch_pm_parameter="subscribe")
         return
 
     results = []
@@ -108,11 +108,8 @@ async def answer(bot, query):
 def get_reply_markup(query):
     buttons = [
         [
-            InlineKeyboardButton('Search again', switch_inline_query_current_chat=query)
+            InlineKeyboardButton('ꜱᴇᴀʀᴄʜ ᴀɢᴀɪɴ', switch_inline_query_current_chat=query),
+            InlineKeyboardButton('✢ ᴜᴘᴅᴀᴛᴇꜱ ✢', url="https://t.me/AM_FILMS")
         ]
         ]
     return InlineKeyboardMarkup(buttons)
-
-
-
-
